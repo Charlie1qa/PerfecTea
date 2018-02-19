@@ -42,4 +42,11 @@ Menu:
 
 ![alt text](https://i.imgur.com/UWVkcXK.jpg)
 
+## Adding a RTC
+A real time clock must be added to the system to allow the use of a clock and timer as the machine does not have an active internet connection when in use. 
+
+These instructions are based on those described in: https://www.raspberrypi.org/forums/viewtopic.php?t=85683
+
+Using the DS1307 circuit we must find it on the I2C bus.
+
 
