@@ -49,14 +49,20 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mywindow.cpp \
-		title_scr.cpp qrc_resource.cpp \
-		moc_title_scr.cpp
+		title_scr.cpp \
+		infodialog.cpp \
+		settime.cpp qrc_resource.cpp \
+		moc_title_scr.cpp \
+		moc_infodialog.cpp \
+		moc_settime.cpp
 OBJECTS       = main.o \
-		mywindow.o \
 		title_scr.o \
+		infodialog.o \
+		settime.o \
 		qrc_resource.o \
-		moc_title_scr.o
+		moc_title_scr.o \
+		moc_infodialog.o \
+		moc_settime.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -98,6 +104,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
@@ -113,10 +120,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		PerfecTea_GUI.pro mywindow.h \
-		title_scr.h main.cpp \
-		mywindow.cpp \
-		title_scr.cpp
+		PerfecTea_GUI.pro title_scr.h \
+		infodialog.h \
+		settime.h main.cpp \
+		title_scr.cpp \
+		infodialog.cpp \
+		settime.cpp
 QMAKE_TARGET  = PerfecTea_GUI
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = PerfecTea_GUI
@@ -144,7 +153,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_mywindow.h ui_title_scr.h $(OBJECTS)  
+$(TARGET): ui_title_scr.h ui_infodialog.h ui_settime.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: PerfecTea_GUI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -188,6 +197,7 @@ Makefile: PerfecTea_GUI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/q
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
@@ -250,6 +260,7 @@ Makefile: PerfecTea_GUI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/q
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
@@ -285,9 +296,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents resource.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents mywindow.h title_scr.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mywindow.cpp title_scr.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mywindow.ui title_scr.ui $(DISTDIR)/
+	$(COPY_FILE) --parents title_scr.h infodialog.h settime.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp title_scr.cpp infodialog.cpp settime.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents title_scr.ui infodialog.ui settime.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -297,6 +308,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -323,22 +335,31 @@ qrc_resource.cpp: resource.qrc \
 		img/settings.png
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resource resource.qrc -o qrc_resource.cpp
 
-compiler_moc_header_make_all: moc_title_scr.cpp
+compiler_moc_header_make_all: moc_title_scr.cpp moc_infodialog.cpp moc_settime.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_title_scr.cpp
+	-$(DEL_FILE) moc_title_scr.cpp moc_infodialog.cpp moc_settime.cpp
 moc_title_scr.cpp: title_scr.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/karolis/PerfecTea/PerfecTea_GUI -I/home/karolis/PerfecTea/PerfecTea_GUI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include title_scr.h -o moc_title_scr.cpp
 
+moc_infodialog.cpp: infodialog.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/karolis/PerfecTea/PerfecTea_GUI -I/home/karolis/PerfecTea/PerfecTea_GUI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include infodialog.h -o moc_infodialog.cpp
+
+moc_settime.cpp: settime.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/karolis/PerfecTea/PerfecTea_GUI -I/home/karolis/PerfecTea/PerfecTea_GUI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include settime.h -o moc_settime.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mywindow.h ui_title_scr.h
+compiler_uic_make_all: ui_title_scr.h ui_infodialog.h ui_settime.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mywindow.h ui_title_scr.h
-ui_mywindow.h: mywindow.ui
-	/usr/lib/x86_64-linux-gnu/qt5/bin/uic mywindow.ui -o ui_mywindow.h
-
+	-$(DEL_FILE) ui_title_scr.h ui_infodialog.h ui_settime.h
 ui_title_scr.h: title_scr.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic title_scr.ui -o ui_title_scr.h
+
+ui_infodialog.h: infodialog.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic infodialog.ui -o ui_infodialog.h
+
+ui_settime.h: settime.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic settime.ui -o ui_settime.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -350,22 +371,34 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-main.o: main.cpp mywindow.h \
-		title_scr.h
+main.o: main.cpp title_scr.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-mywindow.o: mywindow.cpp mywindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mywindow.o mywindow.cpp
-
 title_scr.o: title_scr.cpp title_scr.h \
-		ui_title_scr.h
+		ui_title_scr.h \
+		settime.h \
+		infodialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o title_scr.o title_scr.cpp
+
+infodialog.o: infodialog.cpp infodialog.h \
+		ui_infodialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o infodialog.o infodialog.cpp
+
+settime.o: settime.cpp settime.h \
+		ui_settime.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settime.o settime.cpp
 
 qrc_resource.o: qrc_resource.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resource.o qrc_resource.cpp
 
 moc_title_scr.o: moc_title_scr.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_title_scr.o moc_title_scr.cpp
+
+moc_infodialog.o: moc_infodialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_infodialog.o moc_infodialog.cpp
+
+moc_settime.o: moc_settime.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_settime.o moc_settime.cpp
 
 ####### Install
 

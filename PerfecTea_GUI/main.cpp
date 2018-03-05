@@ -1,4 +1,4 @@
-#include "mywindow.h"
+//#include "mywindow.h"
 #include "title_scr.h"
 #include <QApplication>
 

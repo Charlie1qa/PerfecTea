@@ -26,6 +26,10 @@ private slots:
 
     void on_pushButton_10_clicked();
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::title_scr *ui;
 };

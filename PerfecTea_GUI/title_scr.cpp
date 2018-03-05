@@ -1,5 +1,7 @@
 #include "title_scr.h"
 #include "ui_title_scr.h"
+#include "settime.h"
+#include "infodialog.h"
 #include <QTimer>
 #include <QDateTime>
 
@@ -52,4 +54,18 @@ void title_scr::on_pushButton_11_clicked()
 void title_scr::on_pushButton_10_clicked()
 {
     QApplication::quit();
+}
+
+void title_scr::on_pushButton_8_clicked()
+{
+    infodialog window;
+    window.setModal(true);
+    window.exec();
+}
+
+void title_scr::on_pushButton_7_clicked()
+{
+    SetTime window;
+    window.setModal(true);
+    window.exec();
 }
