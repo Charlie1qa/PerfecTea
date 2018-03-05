@@ -7,5 +7,7 @@
         <file>img/settings.png</file>
         <file>img/short.png</file>
         <file>img/small.png</file>
+        <file>img/TeaCupLoadIcon.png</file>
+        <file>img/title1.png</file>
     </qresource>
 </RCC>
