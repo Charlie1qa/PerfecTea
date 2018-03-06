@@ -1,2 +1,3 @@
 #To drive the L298 motor driver. 
 #This allows the tea infusor to be dropped into the cup
+#We will probably need a seperate power supply to prevent current spikes from causeing a reboot in the PI
