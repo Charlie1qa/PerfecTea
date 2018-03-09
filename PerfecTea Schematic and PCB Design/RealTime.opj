@@ -11,6 +11,10 @@
   (Folder "Outputs")
   (Folder "Referenced Projects")
   (PartMRUSelector
+    ("HEADER 3"
+      (FullPartName "HEADER 3.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
     (BUZZER
       (FullPartName "BUZZER.Normal")
       (LibraryName
@@ -56,7 +60,8 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources" ".\realtime.dsn")
-      (Select "Design Resources" ".\realtime.dsn"))
+      (Path "Design Resources" ".\realtime.dsn" "SCHEMATIC1")
+      (Select "Design Resources" ".\realtime.dsn" "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -66,11 +71,11 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 130 1766 130 589")
-        (Scroll "-484 -4")
-        (Zoom "87")
+        (Placement "44 2 3 -1 -1 -8 -31 52 1684 52 507")
+        (Scroll "-274 75")
+        (Zoom "100")
         (Occurrence "/"))
-      (Path "H:\REAL TIME\REALTIME.DSN")
+      (Path "H:\PERFECTEA SCHEMATIC AND PCB DESIGN\REALTIME.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1")))
   (MPSSessionName "2069163o"))
