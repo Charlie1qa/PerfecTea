@@ -21,6 +21,20 @@ The machine is made up of:
 - 1x DC Motor
 - 1x Custom Designed Vintage Rapid Prototyped Frame (aka. Meccano)
 
+
+## How To Build the Software
+
+Make sure you have build-essentials and qmake installed. If not ''sudo apt-get install qt5-qmake build-essential''
+After that you can just build the software with:
+'''
+qmake
+make
+sudo ./PerfecTea_GUI
+'''
+
+sudo command when launching is needed because of the program needing elevated privileges to set the date and time at the initial startup.
+
+
 ## GUI Mock Ups
 
 Start Screen:
