@@ -24,13 +24,14 @@ The machine is made up of:
 
 ## How To Build the Software
 
-Make sure you have build-essentials and qmake installed. If not ''sudo apt-get install qt5-qmake build-essential''
+Make sure you have build-essentials and qmake installed. If not, run 
+```sudo apt-get install qt5-qmake build-essential```
 After that you can just build the software with:
-'''
+```
 qmake
 make
 sudo ./PerfecTea_GUI
-'''
+```
 
 sudo command when launching is needed because of the program needing elevated privileges to set the date and time at the initial startup.
 
