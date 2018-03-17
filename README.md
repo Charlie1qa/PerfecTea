@@ -35,6 +35,9 @@ sudo ./PerfecTea_GUI
 
 sudo command when launching is needed because of the program needing elevated privileges to set the date and time at the initial startup.
 
+## Software Flow Diagram
+
+![alt text](https://i.imgur.com/Fow0LjU.png)
 
 ## GUI Mock Ups
 
