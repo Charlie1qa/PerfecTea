@@ -1,0 +1,21 @@
+{ Using PSTWRITER 17.2.0 d001Mar-26-2018 at 16:53:03 }
+
+#1 WARNING(ORCAP-36006): Part Name "BATTERY_GU-CR2032-CLIP_3V COIN BATTERY" is renamed to "BATTERY_GU-CR2032-CLIP_3V COIN".
+#2 WARNING(ORCAP-36006): Part Name "HEADER 20X2_GU-RASP-PI-3_RASBERRY PI HEADER" is renamed to "HEADER 20X2_GU-RASP-PI-3_RASBER".
+#3 WARNING(ORCAP-36006): Part Name "HEADER 13X2_GU-DIP26_3.5 WAVESHARE TOUCHSCREEN " is renamed to "HEADER 13X2_GU-DIP26_3.5 WAVESH".
+#4 WARNING(ORCAP-36006): Part Name "HEADER 2_GU-MOLEX2_BUZZER/LOUDSPEAKER" is renamed to "HEADER 2_GU-MOLEX2_BUZZER/LOUDS".
+#5 WARNING(ORCAP-36006): Part Name "RESISTOR_GU-RC400_1W INTERFACE PULL UP" is renamed to "RESISTOR_GU-RC400_1W INTERFACE".
+#6 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#4" as visible power pin of same name already exists in Package L293D_0 , U1: SCHEMATIC1, PAGE1 (7.60, 4.70).
+#7 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#5" as visible power pin of same name already exists in Package L293D_0 , U1: SCHEMATIC1, PAGE1 (7.60, 4.70).
+#8 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#13" as visible power pin of same name already exists in Package L293D_0 , U1: SCHEMATIC1, PAGE1 (7.60, 4.70).
+#9 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#12" as visible power pin of same name already exists in Package L293D_0 , U1: SCHEMATIC1, PAGE1 (7.60, 4.70).
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro/pstchip.dat
+
+Loading... H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro/pstchip.dat
+
+Loading... H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro/pstxprt.dat
+
+Loading... H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro/pstxnet.dat
+packaging the design view...

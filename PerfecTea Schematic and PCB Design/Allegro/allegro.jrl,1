@@ -1,0 +1,36 @@
+\t (00:00:05) allegro 17.2 S013 Windows SPB 64-bit Edition
+\t (00:00:05)     Journal start - Mon Mar 26 18:16:44 2018
+\t (00:00:05)         Host=RANK329-10 User=2069163o Pid=5560 CPUs=8
+\t (00:00:05) CmdLine= c:\cadence\spb_17.2\tools\bin\allegro.exe H:\PerfecTea Schematic and PCB Design\Allegro\rev1.brd
+\t (00:00:05) 
+   (00:00:05) Loading axlcore.cxt 
+\t (00:00:06) Opening existing design...
+\d (00:00:06) Design opened: H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd
+\i (00:00:06) trapsize 3718
+\i (00:00:06) trapsize 3803
+\i (00:00:06) trapsize 4404
+\i (00:00:07) trapsize 3621
+\i (00:00:07) trapsize 4225
+\i (00:00:07) trapsize 3621
+\i (00:00:07) generaledit 
+\i (00:00:11) enved 
+\i (00:00:11) generaledit 
+\i (00:00:13) setwindow form.prfedit
+\i (00:00:13) FORM prfedit treelist  Os 
+\i (00:00:14) FORM prfedit treelist  Paths 
+\i (00:00:16) FORM prfedit treelist  Library Paths 
+\i (00:00:20) FORM prfedit parampath  
+\i (00:00:23) FORM prfedit padpath  
+\i (00:00:52) FORM prfedit psmpath  
+\i (00:01:26) FORM prfedit apply  
+\i (00:01:26) FORM prfedit apply  
+\i (00:01:27) FORM prfedit apply  
+\i (00:01:28) FORM prfedit done  
+\i (00:01:28) setwindow pcb
+\i (00:01:28) pick grid -4181.94 -2070.14
+\t (00:01:28) last pick:  -4200.00 -2100.00
+\i (00:01:29) save 
+\i (00:01:31) fillin yes 
+\i (00:01:31) generaledit 
+\i (00:01:33) exit 
+\t (00:01:33)     Journal end - Mon Mar 26 18:18:13 2018

@@ -1,0 +1,110 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 17.2.0 d001Mar-26-2018 at 16:48:19 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='REALTIME';
+ POST_TIME='Jan  9 2017 17:57:56';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ BT1 'BATTERY_GU-CR2032-CLIP_3V COIN':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS2081@DISCRETE.BATTERY.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins2081@discrete.\battery.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins2081@discrete.\battery.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'HEADER 20X2_GU-DIP40_RASBERRY P':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS356@CONNECTOR.HEADER 20X2.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins356@connector.\header 20x2.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins356@connector.\header 20x2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'HEADER 13X2_GU-DIP26_3.5 WAVESH':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS505@CONNECTOR.HEADER 13X2.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins505@connector.\header 13x2.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins505@connector.\header 13x2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J4 'HEADER 2_GU-MOLEX2_MOTOR OUT A':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS2850@CONNECTOR.HEADER 2.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins2850@connector.\header 2.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins2850@connector.\header 2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J5 'HEADER 3_GU-MOLEX3_TEMP PROBE':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS4025@CONNECTOR.HEADER 3.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins4025@connector.\header 3.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins4025@connector.\header 3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J6 'HEADER 2_GU-MOLEX2_BUZZER/LOUDS':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS4776@CONNECTOR.HEADER 2.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins4776@connector.\header 2.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins4776@connector.\header 2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'RESISTOR_GU-RC400_1W INTERFACE':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS2755@DISCRETE.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins2755@discrete.\resistor.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins2755@discrete.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'L293D_0_GU-DIP16_L293D':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS54@REALTIME.L293D_0.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins54@realtime.\l293d_0.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins54@realtime.\l293d_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'DS1307_0_GU-DIP8_DS1307':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS149@REALTIME.DS1307_0.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins149@realtime.\ds1307_0.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins149@realtime.\ds1307_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Y1 'CRYSTAL_GU-RC100_CRYSTAL':;
+
+SECTION_NUMBER 1
+ '@REALTIME.SCHEMATIC1(SCH_1):INS192@DISCRETE.CRYSTAL.NORMAL(CHIPS)':
+ C_PATH='@realtime.schematic1(sch_1):ins192@discrete.\crystal.normal\(chips)',
+ P_PATH='@realtime.schematic1(sch_1):page1_ins192@discrete.\crystal.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

@@ -1,0 +1,84 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Allegro Netrev Import Logic                                      )
+(                                                                     )
+(    Drawing          : rev1.brd                                      )
+(    Software Version : 17.2S013                                      )
+(    Date/Time        : Mon Mar 26 16:53:04 2018                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+------ Directives ------------
+
+Ripup etch:                  No
+Ripup delete first segment:  No
+Ripup retain bondwire:       No
+Ripup symbols:               Always
+Missing symbol has error:    No
+DRC update:                  Yes
+Schematic directory:         'H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro'
+Design Directory:            'H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro'
+Old design name:             'H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd'
+New design name:             'H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/PerfecTea_rev_1.brd'
+
+CmdLine: netrev.exe -y 1 -i H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro H:\PerfecTea Schematic and PCB Design\Allegro\rev1.brd H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro\PerfecTea_rev_1.brd
+
+------ Preparing to read pst files ------
+
+Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstchip.dat 
+   Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstchip.dat (00:00:00.03)
+Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxprt.dat 
+   Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxprt.dat (00:00:00.00)
+Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxnet.dat 
+   Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxnet.dat (00:00:00.00)
+
+------ Oversights/Warnings/Errors ------
+
+
+#1   WARNING(SPMHNI-192): Device/Symbol check warning detected. [help]
+
+WARNING(SPMHNI-194): Symbol 'GU-DIP26' used by RefDes J2 for device 'HEADER 13X2_GU-DIP26_3.5 WAVESH' not found in PSMPATH or must be "dbdoctor"ed.
+
+------ Library Paths ------
+MODULEPATH =  . 
+           c:/cadence/spb_17.2/share/local/pcb/modules 
+
+PSMPATH =  Q:/allegro/PCB_LIB/symbols/ 
+           H:/PerfecTea Schematic and PCB Design/footprints/psmpath/ 
+
+PADPATH =  Q:/allegro/PCB_LIB/padstacks/ 
+           H:/PerfecTea Schematic and PCB Design/footprints/padpath/ 
+
+
+------ Summary Statistics ------
+
+
+netrev run on Mar 26 16:53:04 2018
+   DESIGN NAME : 'REALTIME'
+   PACKAGING ON Jan  9 2017 17:57:56
+
+   COMPILE 'logic'
+   CHECK_PIN_NAMES OFF
+   CROSS_REFERENCE OFF
+   FEEDBACK OFF
+   INCREMENTAL OFF
+   INTERFACE_TYPE PHYSICAL
+   MAX_ERRORS 500
+   MERGE_MINIMUM 5
+   NET_NAME_CHARS '#%&()*+-./:=>?@[]^_`|'
+   NET_NAME_LENGTH 24
+   OVERSIGHTS ON
+   REPLACE_CHECK OFF
+   SINGLE_NODE_NETS ON
+   SPLIT_MINIMUM 0
+   SUPPRESS   20
+   WARNINGS ON
+
+ No error detected
+ No oversight detected
+  1 warnings detected
+
+cpu time      0:01:28
+elapsed time  0:00:01
+
