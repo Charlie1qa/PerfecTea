@@ -1,0 +1,293 @@
+#include "title_scr.h"
+#include "ui_title_scr.h"
+#include "settime.h"
+#include "infodialog.h"
+#include "placedialog.h"
+#include "readydialog.h"
+#include <QTimer>
+#include <QDateTime>
+
+int cupsize = 0;
+int cuplength = 0;
+
+title_scr::title_scr(QWidget *parent) :
+    QMainWindow(parent),   
+    ui(new Ui::title_scr)
+{    
+    ui->setupUi(this);
+
+    /* timer will execute "showTime" function
+     * everytime it expires (as soon as possible, use 'start(1000)'
+     * to update every second) */
+    QTimer *timer=new QTimer(this);    
+    connect(timer, SIGNAL(timeout()),this,SLOT(showTime()));    
+    timer->start(100);
+    countdowntimer=new QTimer(this);
+    connect(countdowntimer, SIGNAL(timeout()),this,SLOT(updateBar()));
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->progressBar->setRange(0,100);
+    ui->progressBar->setValue(0);
+
+   /* connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
+    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
+    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(on_pushButton_3_clicked()));
+    connect(ui->pushButton_4, SIGNAL(clicked()), this, SLOT(on_pushButton_4_clicked()));
+    connect(ui->pushButton_5, SIGNAL(clicked()), this, SLOT(on_pushButton_5_clicked()));*/
+    connect(ui->pushButton_12, SIGNAL(clicked()), this, SLOT(on_pushButton_12_clicked()));
+    if ((cupsize || cuplength) == 0){
+        ui->pushButton -> setEnabled(false);
+        ui->pushButton_2 -> setEnabled(false);
+        ui->pushButton_3 -> setEnabled(false);
+    }
+}
+
+void title_scr::showTime()
+{
+    QTime time=QTime::currentTime();
+    QString time_string=time.toString("hh : mm");
+    ui->clock1->setText(time_string);
+
+    QDate date=QDate::currentDate();
+    QString datetext=date.toString("ddd dd \nMMM yyyy");
+    ui->date1->setText(datetext);
+}
+
+void title_scr::updateBar()
+{    
+    //short brewtime
+    if (cuplength == 1){
+        ui->progressBar->setValue(10-counter);
+        counter--;
+    }
+    //regular brewtime
+    else if (cuplength == 2){
+        ui->progressBar->setValue(360-counter);
+        counter--;
+    }
+    //long brewtime
+    else if (cuplength == 3){
+        ui->progressBar->setValue(420-counter);
+        counter--;
+    }
+    //when counter reaches 0, open TeaReady dialog window, reset values, return to menu
+    if (counter < 0){
+        countdowntimer->stop();
+        ui->pushButton_4 -> setEnabled(true);
+        ui->pushButton_5 -> setEnabled(true);
+
+        cupsize = 0;
+        cuplength = 0;
+        counter = 0;
+
+        ui->progressBar->setRange(0,100);
+        ui->progressBar->setValue(0);
+        ui->label_9->setText("Please select the size of your tea cup");
+
+        readyDialog window;
+        window.setModal(true);
+        window.exec();
+
+        ui->stackedWidget->setCurrentIndex(1);
+
+    }
+}
+
+title_scr::~title_scr()
+{
+    delete ui;
+}
+
+void title_scr::mousePressEvent(QMouseEvent *event)
+{
+    if (ui->stackedWidget->currentIndex()==0){      //if mouse is pressed while on title screen, go to screen one
+        ui->stackedWidget->setCurrentIndex(1);
+    }
+}
+
+//help button
+void title_scr::on_pushButton_6_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+//help menu back button
+void title_scr::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+//shutdown button
+void title_scr::on_pushButton_10_clicked()
+{
+    QApplication::quit();
+}
+
+//info and credits button
+void title_scr::on_pushButton_8_clicked()
+{
+    infodialog window;
+    window.setModal(true);
+    window.exec();
+}
+
+//call the time/date setting window from help menu
+void title_scr::on_pushButton_7_clicked()
+{
+    SetTime window;
+    window.setModal(true);
+    window.exec();
+}
+
+//short button
+void title_scr::on_pushButton_clicked()
+{    
+    cuplength = 1;
+    ui->label_9->setText("Please select the size of your cup");
+    ui->pushButton -> setEnabled(false);
+    ui->pushButton_2 -> setEnabled(false);
+    ui->pushButton_3 -> setEnabled(false);
+    if (cupsize != 0)
+    {
+        placeDialog window;
+        window.setModal(true);
+        window.exec();
+        /* check if the dialog window was closed and switch to the
+         * loading screen if it was */
+        if (window.isActiveWindow() == false){
+            ui->stackedWidget->setCurrentIndex(2);                     
+            counter = 10;                              //300 seconds brewing time countdown
+            ui->progressBar->setRange(0,10);            
+            countdowntimer->start(1000);
+        }
+    }
+}
+
+/* debug back button
+ resets values, re-enables buttons */
+void title_scr::on_pushButton_12_clicked()
+{
+    ui->pushButton -> setEnabled(false);
+    ui->pushButton_2 -> setEnabled(false);
+    ui->pushButton_3 -> setEnabled(false);
+    ui->pushButton_4 -> setEnabled(true);
+    ui->pushButton_5 -> setEnabled(true);
+    cupsize = 0;
+    cuplength = 0;
+    counter = 0;
+    ui->label_9->setText("Please select the size of your tea cup");
+    ui->stackedWidget->setCurrentIndex(1);
+    if (countdowntimer->isActive()==true) countdowntimer->stop();
+
+}
+
+
+//regular button
+void title_scr::on_pushButton_2_clicked()
+{
+    cuplength = 2;
+    ui->label_9->setText("Please select the size of your cup");
+    ui->pushButton -> setEnabled(false);
+    ui->pushButton_2 -> setEnabled(false);
+    ui->pushButton_3 -> setEnabled(false);
+    if (cupsize != 0)
+    {
+        placeDialog window;         // calls place dialog window
+        window.setModal(true);
+        window.exec();
+        /* check if the dialog window was closed and stiwch to the
+         * loading screen if it was */
+        if (window.isActiveWindow() == false){
+            ui->stackedWidget->setCurrentIndex(2);
+            counter = 360;                              //360 seconds brewing time countdown
+            ui->progressBar->setRange(0,360);            
+            countdowntimer->start(1000);
+        }
+    }
+}
+
+//long button
+void title_scr::on_pushButton_3_clicked()
+{
+    cuplength = 3;
+    ui->label_9->setText("Please select the size of your cup");
+    ui->pushButton -> setEnabled(false);
+    ui->pushButton_2 -> setEnabled(false);
+    ui->pushButton_3 -> setEnabled(false);
+    if (cupsize != 0)
+    {
+        placeDialog window;         // calls place dialog window
+        window.setModal(true);
+        window.exec();
+        /* check if the dialog window was closed and stiwch to the
+         * loading screen if it was */
+        if (window.isActiveWindow() == false){
+            ui->stackedWidget->setCurrentIndex(2);
+            counter = 420;                              //420 seconds brewing time countdown
+            ui->progressBar->setRange(0,420);            
+            countdowntimer->start(1000);
+        }
+    }
+}
+
+//large button
+void title_scr::on_pushButton_4_clicked()
+{
+    cupsize = 2;
+    ui->label_9->setText("Please select the brewtime");
+    ui->pushButton -> setEnabled(true);
+    ui->pushButton_2 -> setEnabled(true);
+    ui->pushButton_3 -> setEnabled(true);
+    ui->pushButton_4 -> setEnabled(false);
+    ui->pushButton_5 -> setEnabled(false);
+    /*if (cuplength != 0)
+    {
+        placeDialog window;         // calls place dialog window
+        window.setModal(true);
+        window.exec();
+        /* check if the dialog window was closed and switch to the
+         * loading screen if it was */
+        /*if (window.isActiveWindow() == false){
+            ui->stackedWidget->setCurrentIndex(2);
+
+        }
+    }*/
+}
+
+//small button
+void title_scr::on_pushButton_5_clicked()
+{
+    cupsize = 1;
+    ui->label_9->setText("Please select the brewtime");
+    ui->pushButton -> setEnabled(true);
+    ui->pushButton_2 -> setEnabled(true);
+    ui->pushButton_3 -> setEnabled(true);
+    ui->pushButton_4 -> setEnabled(false);
+    ui->pushButton_5 -> setEnabled(false);
+    /*if (cuplength != 0)
+    {
+        placeDialog window;         // calls place dialog window
+        window.setModal(true);
+        window.exec();*/
+        /* check if the dialog window was closed and switch to the
+         * loading screen if it was */
+        /*if (window.isActiveWindow() == false){
+            ui->stackedWidget->setCurrentIndex(2);
+        }
+    }*/
+}
+
+//cancel button
+void title_scr::on_pushButton_13_clicked()
+{
+    ui->pushButton -> setEnabled(false);
+    ui->pushButton_2 -> setEnabled(false);
+    ui->pushButton_3 -> setEnabled(false);
+    ui->pushButton_4 -> setEnabled(true);
+    ui->pushButton_5 -> setEnabled(true);
+    cupsize = 0;
+    cuplength = 0;
+    counter = 0;
+    ui->label_9->setText("Please select the size of your tea cup");
+    ui->stackedWidget->setCurrentIndex(1);
+    if (countdowntimer->isActive()) countdowntimer->stop();
+}
