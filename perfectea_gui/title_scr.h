@@ -22,6 +22,8 @@ private slots:
 
     double checkTemp();
 
+    void operateMotor();
+
     void mousePressEvent(QMouseEvent *event);
 
     void on_pushButton_6_clicked();
@@ -53,6 +55,7 @@ private:
     int counter;
     float temp;
     QTimer *countdowntimer;
+    int direction;
 };
 
 #endif // TITLE_SCR_H

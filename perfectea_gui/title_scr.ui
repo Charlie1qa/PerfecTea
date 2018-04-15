@@ -408,19 +408,6 @@
        <string>DebugBack</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>250</y>
-        <width>81</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Temp &lt; 27</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <property name="styleSheet">
@@ -443,7 +430,7 @@
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>90</y>
+        <y>110</y>
         <width>191</width>
         <height>51</height>
        </rect>
@@ -452,24 +439,11 @@
        <string>Info and Credits</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>150</y>
-        <width>191</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Easter Egg?</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_10">
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>210</y>
+        <y>190</y>
         <width>191</width>
         <height>51</height>
        </rect>
@@ -481,10 +455,10 @@
      <widget class="QPushButton" name="pushButton_11">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>270</y>
-        <width>89</width>
-        <height>25</height>
+        <x>168</x>
+        <y>254</y>
+        <width>101</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">

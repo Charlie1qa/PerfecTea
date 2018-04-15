@@ -1,17 +1,12 @@
-//#include "mywindow.h"
 #include "title_scr.h"
 #include <QApplication>
+#include <QGuiApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    //QWidget *widget = new QWidget;
     title_scr title;
-    /*Ui::MyWindow ui;
-    ui.setupUi(widget);*/
 
-
-    //widget->show();
-    title.show();
+    title.showFullScreen();
     return app.exec();
 }

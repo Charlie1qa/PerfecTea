@@ -25,6 +25,7 @@ title_scr::title_scr(QWidget *parent) :
     QTimer *timer=new QTimer(this);    
     connect(timer, SIGNAL(timeout()),this,SLOT(showTime()));    
     timer->start(100);
+    temp = 65;
     countdowntimer=new QTimer(this);
     connect(countdowntimer, SIGNAL(timeout()),this,SLOT(updateBar()));
     ui->stackedWidget->setCurrentIndex(0);
@@ -38,10 +39,9 @@ title_scr::title_scr(QWidget *parent) :
     connect(ui->pushButton_5, SIGNAL(clicked()), this, SLOT(on_pushButton_5_clicked()));*/
     connect(ui->pushButton_12, SIGNAL(clicked()), this, SLOT(on_pushButton_12_clicked()));
     if ((cupsize || cuplength) == 0){
-        ui->pushButton -> setEnabled(false);
-        ui->pushButton_2 -> setEnabled(false);
-        ui->pushButton_3 -> setEnabled(false);
-    }
+        ui->pushButton_4 -> setEnabled(false);
+        ui->pushButton_5 -> setEnabled(false);
+        }
 }
 
 void title_scr::showTime()
@@ -69,6 +69,20 @@ double title_scr::checkTemp()
 }
 
 
+void title_scr::operateMotor()
+{
+    QProcess process, process2;
+    // code to operate motor
+    process.start("./Motor");
+    process.waitForFinished();
+    QString dirstring = QString::number(direction);
+    process2.start(dirstring);
+    process2.waitForFinished();
+
+    process.close();
+    process2.close();
+}
+
 void title_scr::updateBar()
 {    
     //short brewtime
@@ -89,8 +103,10 @@ void title_scr::updateBar()
     //when counter reaches 0, reset values
     if (counter < 0){
         countdowntimer->stop();
-        ui->pushButton_4 -> setEnabled(true);
-        ui->pushButton_5 -> setEnabled(true);
+        ui->pushButton -> setEnabled(true);
+        ui->pushButton_2 -> setEnabled(true);
+        ui->pushButton_3 -> setEnabled(true);
+
 
         cupsize = 0;
         cuplength = 0;
@@ -98,7 +114,7 @@ void title_scr::updateBar()
 
         ui->progressBar->setRange(0,100);
         ui->progressBar->setValue(0);
-        ui->label_9->setText("Please select the size of your tea cup");
+        ui->label_9->setText("Please select the brew strength");
 
         //open TeaReady dialog window
         readyDialog window;
@@ -165,35 +181,23 @@ void title_scr::on_pushButton_clicked()
     ui->pushButton -> setEnabled(false);
     ui->pushButton_2 -> setEnabled(false);
     ui->pushButton_3 -> setEnabled(false);
-    if (cupsize != 0)
-    {
-        placeDialog window;
-        window.setModal(true);
-        window.exec();
-        /* check if the dialog window was closed and switch to the
-         * loading screen if it was */
-        if (window.isActiveWindow() == false){
-            ui->stackedWidget->setCurrentIndex(2);                     
-            counter = 10;                              //300 seconds brewing time countdown
-            ui->progressBar->setRange(0,10);            
-            countdowntimer->start(1000);
-        }
-    }
+    ui->pushButton_4 -> setEnabled(true);
+    ui->pushButton_5 -> setEnabled(true);
 }
 
 /* debug back button
  resets values, re-enables buttons */
 void title_scr::on_pushButton_12_clicked()
 {
-    ui->pushButton -> setEnabled(false);
-    ui->pushButton_2 -> setEnabled(false);
-    ui->pushButton_3 -> setEnabled(false);
-    ui->pushButton_4 -> setEnabled(true);
-    ui->pushButton_5 -> setEnabled(true);
+    ui->pushButton -> setEnabled(true);
+    ui->pushButton_2 -> setEnabled(true);
+    ui->pushButton_3 -> setEnabled(true);
+    ui->pushButton_4 -> setEnabled(false);
+    ui->pushButton_5 -> setEnabled(false);
     cupsize = 0;
     cuplength = 0;
     counter = 0;
-    ui->label_9->setText("Please select the size of your tea cup");
+    ui->label_9->setText("Please select the brew strength");
     ui->stackedWidget->setCurrentIndex(1);
     if (countdowntimer->isActive()==true) countdowntimer->stop();
 
@@ -203,35 +207,14 @@ void title_scr::on_pushButton_12_clicked()
 //regular button
 void title_scr::on_pushButton_2_clicked()
 {
-    temp = 0;
     cuplength = 2;
     ui->label_9->setText("Please select the size of your cup");
     ui->pushButton -> setEnabled(false);
     ui->pushButton_2 -> setEnabled(false);
     ui->pushButton_3 -> setEnabled(false);
-    if (cupsize != 0)
-    {
-        placeDialog window;         // calls place dialog window
-        window.setModal(true);
-        window.exec();
-        /* check if the dialog window was closed and switch to the
-         * loading screen if it was */
-        if (window.isActiveWindow() == false){            
-            //check water temperature here
-            while (temp < 80){
-                temp = checkTemp();
-                QString temptext;
-                temptext = QString::number(temp);
-                ui->label_8->setText(temptext);
-            }
+    ui->pushButton_4 -> setEnabled(true);
+    ui->pushButton_5 -> setEnabled(true);
 
-            //lower the infuser here
-            ui->stackedWidget->setCurrentIndex(2);
-            counter = 360;                              //360 seconds brewing time countdown
-            ui->progressBar->setRange(0,360);            
-            countdowntimer->start(1000);
-        }
-    }
 }
 
 //long button
@@ -242,20 +225,8 @@ void title_scr::on_pushButton_3_clicked()
     ui->pushButton -> setEnabled(false);
     ui->pushButton_2 -> setEnabled(false);
     ui->pushButton_3 -> setEnabled(false);
-    if (cupsize != 0)
-    {
-        placeDialog window;         // calls place dialog window
-        window.setModal(true);
-        window.exec();
-        /* check if the dialog window was closed and stiwch to the
-         * loading screen if it was */
-        if (window.isActiveWindow() == false){
-            ui->stackedWidget->setCurrentIndex(2);
-            counter = 420;                              //420 seconds brewing time countdown
-            ui->progressBar->setRange(0,420);            
-            countdowntimer->start(1000);
-        }
-    }
+    ui->pushButton_4 -> setEnabled(true);
+    ui->pushButton_5 -> setEnabled(true);
 }
 
 //large button
@@ -263,23 +234,39 @@ void title_scr::on_pushButton_4_clicked()
 {
     cupsize = 2;
     ui->label_9->setText("Please select the brewtime");
-    ui->pushButton -> setEnabled(true);
-    ui->pushButton_2 -> setEnabled(true);
-    ui->pushButton_3 -> setEnabled(true);
     ui->pushButton_4 -> setEnabled(false);
     ui->pushButton_5 -> setEnabled(false);
-    /*if (cuplength != 0)
+    if (cuplength != 0)
     {
         placeDialog window;         // calls place dialog window
         window.setModal(true);
         window.exec();
         /* check if the dialog window was closed and switch to the
          * loading screen if it was */
-        /*if (window.isActiveWindow() == false){
-            ui->stackedWidget->setCurrentIndex(2);
+        if (window.isActiveWindow() == false){
+            //check water temperature here
+            while (temp > 80){
+                temp = checkTemp();
+                /* QString temptext;
+                 *  temptext = QString::number(temp);
+                 *  ui->label_8->setText(temptext);
+                 */
+            }
 
+            //lower the infuser here
+            direction = 1;
+            operateMotor();
+            QThread::sleep(2);
+            direction = 0;
+            operateMotor();
+            ui->stackedWidget->setCurrentIndex(2);
+            if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
+            else if (cuplength == 2) counter = 360;
+            else counter = 420;
+            ui->progressBar->setRange(0,counter);
+            countdowntimer->start(1000);
         }
-    }*/
+    }
 }
 
 //small button
@@ -287,36 +274,54 @@ void title_scr::on_pushButton_5_clicked()
 {
     cupsize = 1;
     ui->label_9->setText("Please select the brewtime");
-    ui->pushButton -> setEnabled(true);
-    ui->pushButton_2 -> setEnabled(true);
-    ui->pushButton_3 -> setEnabled(true);
     ui->pushButton_4 -> setEnabled(false);
     ui->pushButton_5 -> setEnabled(false);
-    /*if (cuplength != 0)
+    if (cuplength != 0)
     {
         placeDialog window;         // calls place dialog window
         window.setModal(true);
-        window.exec();*/
+        window.exec();
         /* check if the dialog window was closed and switch to the
          * loading screen if it was */
-        /*if (window.isActiveWindow() == false){
+        if (window.isActiveWindow() == false){
+            //check water temperature here
+            while (temp > 80){
+                temp = checkTemp();
+                /* QString temptext;
+                 *  temptext = QString::number(temp);
+                 *  ui->label_8->setText(temptext);
+                 */
+            }
+
+            //lower the infuser here
+            direction = 1;
+            operateMotor();
+            QThread::sleep(2);
+            direction = 0;
+            operateMotor();
+
             ui->stackedWidget->setCurrentIndex(2);
+            if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
+            else if (cuplength == 2) counter = 360;
+            else counter = 420;
+            ui->progressBar->setRange(0,counter);
+            countdowntimer->start(1000);
         }
-    }*/
+    }
 }
 
 //cancel button
 void title_scr::on_pushButton_13_clicked()
 {
-    ui->pushButton -> setEnabled(false);
-    ui->pushButton_2 -> setEnabled(false);
-    ui->pushButton_3 -> setEnabled(false);
-    ui->pushButton_4 -> setEnabled(true);
-    ui->pushButton_5 -> setEnabled(true);
+    ui->pushButton -> setEnabled(true);
+    ui->pushButton_2 -> setEnabled(true);
+    ui->pushButton_3 -> setEnabled(true);
+    ui->pushButton_4 -> setEnabled(false);
+    ui->pushButton_5 -> setEnabled(false);
     cupsize = 0;
     cuplength = 0;
     counter = 0;
-    ui->label_9->setText("Please select the size of your tea cup");
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->label_9->setText("Please select the brewtime");
+    ui->stackedWidget->setCurrentIndex(0);
     if (countdowntimer->isActive()) countdowntimer->stop();
 }
