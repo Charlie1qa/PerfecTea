@@ -74,9 +74,11 @@ void title_scr::operateMotor()
     QProcess process, process2;
     // code to operate motor
     process.start("./Motor");
-    process.waitForFinished();
-    QString dirstring = QString::number(direction);
-    process2.start(dirstring);
+    //process.waitForFinished();
+    //QString dirstring = QString::number(direction);
+    if (direction == 0) process2.start("echo 0");
+    else if (direction ==1) process2.start("echo 1");
+    else process2.start("echo 2");
     process2.waitForFinished();
 
     process.close();
