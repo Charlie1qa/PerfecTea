@@ -6,9 +6,12 @@
 #include "readydialog.h"
 #include <QTimer>
 #include <QDateTime>
+#include <QThread>
+#include <QProcess>
 
 int cupsize = 0;
 int cuplength = 0;
+
 
 title_scr::title_scr(QWidget *parent) :
     QMainWindow(parent),   
@@ -52,6 +55,20 @@ void title_scr::showTime()
     ui->date1->setText(datetext);
 }
 
+double title_scr::checkTemp()
+{
+    QProcess process;
+    // code to check temperature
+    process.start("./checkTemp");
+    process.waitForFinished();
+    QThread::sleep(1);
+    QString output(process.readAllStandardOutput());
+    temp = output.toDouble();
+    process.close();
+    return temp;
+}
+
+
 void title_scr::updateBar()
 {    
     //short brewtime
@@ -69,7 +86,7 @@ void title_scr::updateBar()
         ui->progressBar->setValue(420-counter);
         counter--;
     }
-    //when counter reaches 0, open TeaReady dialog window, reset values, return to menu
+    //when counter reaches 0, reset values
     if (counter < 0){
         countdowntimer->stop();
         ui->pushButton_4 -> setEnabled(true);
@@ -83,10 +100,12 @@ void title_scr::updateBar()
         ui->progressBar->setValue(0);
         ui->label_9->setText("Please select the size of your tea cup");
 
+        //open TeaReady dialog window
         readyDialog window;
         window.setModal(true);
         window.exec();
 
+        //return to menu
         ui->stackedWidget->setCurrentIndex(1);
 
     }
@@ -184,6 +203,7 @@ void title_scr::on_pushButton_12_clicked()
 //regular button
 void title_scr::on_pushButton_2_clicked()
 {
+    temp = 0;
     cuplength = 2;
     ui->label_9->setText("Please select the size of your cup");
     ui->pushButton -> setEnabled(false);
@@ -194,9 +214,18 @@ void title_scr::on_pushButton_2_clicked()
         placeDialog window;         // calls place dialog window
         window.setModal(true);
         window.exec();
-        /* check if the dialog window was closed and stiwch to the
+        /* check if the dialog window was closed and switch to the
          * loading screen if it was */
-        if (window.isActiveWindow() == false){
+        if (window.isActiveWindow() == false){            
+            //check water temperature here
+            while (temp < 80){
+                temp = checkTemp();
+                QString temptext;
+                temptext = QString::number(temp);
+                ui->label_8->setText(temptext);
+            }
+
+            //lower the infuser here
             ui->stackedWidget->setCurrentIndex(2);
             counter = 360;                              //360 seconds brewing time countdown
             ui->progressBar->setRange(0,360);            

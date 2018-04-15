@@ -20,6 +20,8 @@ private slots:
 
     void updateBar();
 
+    double checkTemp();
+
     void mousePressEvent(QMouseEvent *event);
 
     void on_pushButton_6_clicked();
@@ -49,6 +51,7 @@ private slots:
 private:
     Ui::title_scr *ui;
     int counter;
+    float temp;
     QTimer *countdowntimer;
 };
 

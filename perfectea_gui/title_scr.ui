@@ -408,6 +408,19 @@
        <string>DebugBack</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>250</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Temp &lt; 27</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <property name="styleSheet">
