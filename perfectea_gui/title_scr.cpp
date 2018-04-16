@@ -124,9 +124,11 @@ void title_scr::updateBar()
         process.start("sh", QStringList() << "-c" << "./up");
         sleep(2);
 
-        process.write("0x03");
+        process.waitForFinished();
+        process.close();
         process2.start("sh", QStringList() << "-c" << "./zero");
-        sleep(2);
+        sleep(1);
+        process.waitForFinished();
         process2.close();
 
         //open TeaReady dialog window
@@ -280,10 +282,11 @@ void title_scr::on_pushButton_4_clicked()
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
             sleep(2);
-
-            process.write("0x03");
+            process.waitForFinished();
+            process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
             sleep(1);
+            process2.waitForFinished();
             process2.close();
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
@@ -323,12 +326,12 @@ void title_scr::on_pushButton_5_clicked()
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
             sleep(2);
-            process.write("0x03");
-            //process.close();
+            process.waitForFinished();
+            process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
             sleep(1);
-            process2.terminate();
-            //process2.close();
+            process2.waitForFinished();
+            process2.close();
 
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
