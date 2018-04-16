@@ -50,8 +50,8 @@
     ("Allegro Netlist Create DCF File" "FALSE")
     ("Update Allegro Board" "TRUE")
     ("Allegro Netlist Input Board File"
-       "H:\PerfecTea Schematic and PCB Design\Allegro\rev1.brd")
-    ("Allegro Netlist Output Board File" "allegro\PerfecTea_rev_1.brd")
+       "H:\PerfecTea Schematic and PCB Design\Allegro\PerfecTea_rev_2-Template.brd")
+    ("Allegro Netlist Output Board File" "allegro\PerfecTea_rev_2.brd")
     ("Allegro Netlist Remove Etch" "FALSE")
     ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
     ("Allegro Netlist Open Board in Allegro" "ORCAD")
@@ -127,7 +127,9 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources" ".\realtime.dsn")
-      (Path "Outputs"))
+      (Path "Design Resources" ".\realtime.dsn" "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources" ".\realtime.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -138,8 +140,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 52 1352 52 507")
-        (Scroll "-214 190")
-        (Zoom "85")
+        (Scroll "-126 20")
+        (Zoom "103")
         (Occurrence "/"))
       (Path "H:\PERFECTEA SCHEMATIC AND PCB DESIGN\REALTIME.DSN")
       (Schematic "SCHEMATIC1")

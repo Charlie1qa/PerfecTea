@@ -1,6 +1,6 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001Mar-26-2018 at 16:18:48}
-primitive 'BATTERY_GU-CAPCYL400_3V COIN BA';
+{ Using PSTWRITER 17.2.0 d001Mar-26-2018 at 16:49:58}
+primitive 'BATTERY_GU-CR2032-CLIP_3V COIN';
   pin
     '+':
       PIN_NUMBER='(1)';
@@ -11,11 +11,11 @@ primitive 'BATTERY_GU-CAPCYL400_3V COIN BA';
   end_pin;
   body
     PART_NAME='BATTERY';
-    JEDEC_TYPE='GU-CAPCYL400';
+    JEDEC_TYPE='gu-cr2032-clip';
     VALUE='3V Coin BATTERY';
   end_body;
 end_primitive;
-primitive 'HEADER 20X2_GU-DIP40_RASBERRY P';
+primitive 'HEADER 20X2_GU-RASP-PI-3_RASBER';
   pin
     '2':
       PIN_NUMBER='(2)';
@@ -140,7 +140,7 @@ primitive 'HEADER 20X2_GU-DIP40_RASBERRY P';
   end_pin;
   body
     PART_NAME='HEADER 20X2';
-    JEDEC_TYPE='GU-DIP40';
+    JEDEC_TYPE='gu-rasp-pi-3';
     VALUE='Rasberry Pi Header';
   end_body;
 end_primitive;

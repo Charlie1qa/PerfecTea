@@ -2,9 +2,9 @@
 (                                                                     )
 (    Allegro Netrev Import Logic                                      )
 (                                                                     )
-(    Drawing          : rev1.brd                                      )
+(    Drawing          : PerfecTea_rev_2-Template.brd                  )
 (    Software Version : 17.2S013                                      )
-(    Date/Time        : Mon Mar 26 16:53:04 2018                      )
+(    Date/Time        : Mon Apr 16 09:28:38 2018                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -19,15 +19,15 @@ Missing symbol has error:    No
 DRC update:                  Yes
 Schematic directory:         'H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro'
 Design Directory:            'H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro'
-Old design name:             'H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd'
-New design name:             'H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/PerfecTea_rev_1.brd'
+Old design name:             'H:/PerfecTea Schematic and PCB Design/Allegro/PerfecTea_rev_2-Template.brd'
+New design name:             'H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/PerfecTea_rev_2.brd'
 
-CmdLine: netrev.exe -y 1 -i H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro H:\PerfecTea Schematic and PCB Design\Allegro\rev1.brd H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro\PerfecTea_rev_1.brd
+CmdLine: netrev.exe -y 1 -i H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro H:\PerfecTea Schematic and PCB Design\Allegro\PerfecTea_rev_2-Template.brd H:\PERFECTEA SCHEMATIC AND PCB DESIGN\allegro\PerfecTea_rev_2.brd
 
 ------ Preparing to read pst files ------
 
 Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstchip.dat 
-   Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstchip.dat (00:00:00.03)
+   Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstchip.dat (00:00:00.09)
 Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxprt.dat 
    Finished reading H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxprt.dat (00:00:00.00)
 Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxnet.dat 
@@ -38,23 +38,33 @@ Starting to read H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/pstxnet.dat
 
 #1   WARNING(SPMHNI-192): Device/Symbol check warning detected. [help]
 
-WARNING(SPMHNI-194): Symbol 'GU-DIP26' used by RefDes J2 for device 'HEADER 13X2_GU-DIP26_3.5 WAVESH' not found in PSMPATH or must be "dbdoctor"ed.
+WARNING(SPMHNI-194): Symbol 'GU-HEADER26' used by RefDes J2 for device 'HEADER 13X2_GU-HEADER26_3.5 WAV' not found in PSMPATH or must be "dbdoctor"ed.
 
 ------ Library Paths ------
 MODULEPATH =  . 
            c:/cadence/spb_17.2/share/local/pcb/modules 
 
-PSMPATH =  Q:/allegro/PCB_LIB/symbols/ 
-           H:/PerfecTea Schematic and PCB Design/footprints/psmpath/ 
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           c:/cadence/spb_17.2/share/local/pcb/symbols 
+           c:/cadence/spb_17.2/share/pcb/pcb_lib/symbols 
+           c:/cadence/spb_17.2/share/pcb/allegrolib/symbols 
 
-PADPATH =  Q:/allegro/PCB_LIB/padstacks/ 
-           H:/PerfecTea Schematic and PCB Design/footprints/padpath/ 
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           c:/cadence/spb_17.2/share/local/pcb/padstacks 
+           c:/cadence/spb_17.2/share/pcb/pcb_lib/symbols 
+           c:/cadence/spb_17.2/share/pcb/allegrolib/symbols 
 
 
 ------ Summary Statistics ------
 
 
-netrev run on Mar 26 16:53:04 2018
+netrev run on Apr 16 9:28:38 2018
    DESIGN NAME : 'REALTIME'
    PACKAGING ON Jan  9 2017 17:57:56
 
@@ -79,6 +89,6 @@ netrev run on Mar 26 16:53:04 2018
  No oversight detected
   1 warnings detected
 
-cpu time      0:01:28
-elapsed time  0:00:01
+cpu time      0:03:32
+elapsed time  0:00:00
 
