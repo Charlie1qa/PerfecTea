@@ -112,6 +112,19 @@ void title_scr::updateBar()
         ui->pushButton_3 -> setEnabled(true);
 
 
+
+        //raise the infuser
+        process.start("sh", QStringList() << "-c" << "./up");
+        if (cupsize==2) QThread::msleep(1500);
+        else QThread::msleep(2000);
+        process.waitForFinished();
+        process.close();
+        process2.start("sh", QStringList() << "-c" << "./zero");
+        QThread::sleep(1);
+        process.waitForFinished();
+        process2.close();
+
+
         cupsize = 0;
         cuplength = 0;
         counter = 0;
@@ -120,16 +133,7 @@ void title_scr::updateBar()
         ui->progressBar->setValue(0);
         ui->label_9->setText("Please select the brew strength");
 
-        //raise the infuser
-        process.start("sh", QStringList() << "-c" << "./up");
-        QThread::sleep(2);
 
-        process.waitForFinished();
-        process.close();
-        process2.start("sh", QStringList() << "-c" << "./zero");
-        QThread::sleep(1);
-        process.waitForFinished();
-        process2.close();
 
         //open TeaReady dialog window
         readyDialog window;
@@ -147,7 +151,7 @@ title_scr::~title_scr()
     delete ui;
 }
 
-cd..void title_scr::mousePressEvent(QMouseEvent *event)
+void title_scr::mousePressEvent(QMouseEvent *event)
 {
     if (ui->stackedWidget->currentIndex()==0){      //if mouse is pressed while on title screen, go to screen one
         ui->stackedWidget->setCurrentIndex(1);
@@ -281,7 +285,7 @@ void title_scr::on_pushButton_4_clicked()
 
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
-            QThread::msleep(2500);
+            QThread::msleep(1500);
             process.waitForFinished();
             process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
