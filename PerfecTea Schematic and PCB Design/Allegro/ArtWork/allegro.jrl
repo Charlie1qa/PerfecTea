@@ -1,0 +1,173 @@
+\t (00:00:02) allegro 17.2 S013 Windows SPB 64-bit Edition
+\t (00:00:02)     Journal start - Wed Mar 28 16:13:51 2018
+\t (00:00:02)         Host=RANK329-15 User=2069163o Pid=1324 CPUs=8
+\t (00:00:02) CmdLine= c:\cadence\spb_17.2\tools\bin\allegro.exe H:\PerfecTea Schematic and PCB Design\Allegro\ArtWork\PerfecTea_rev_1_ArtWork.brd
+\t (00:00:02) 
+   (00:00:02) Loading axlcore.cxt 
+\t (00:00:02) Opening existing design...
+\i (00:00:04) fillin yes 
+\d (00:00:04) Design opened: H:/PerfecTea Schematic and PCB Design/Allegro/ArtWork/PerfecTea_rev_1_ArtWork.brd
+\i (00:00:04) trapsize 4749
+\i (00:00:04) trapsize 4857
+\i (00:00:04) trapsize 5629
+\i (00:00:04) trapsize 4628
+\i (00:00:04) trapsize 5629
+\i (00:00:04) trapsize 4824
+\i (00:00:04) generaledit 
+\i (00:00:05) zoom in 1 
+\i (00:00:05) setwindow pcb
+\i (00:00:05) zoom in -386.43 -458.24
+\i (00:00:05) trapsize 2412
+\i (00:00:06) zoom in 1 
+\i (00:00:06) setwindow pcb
+\i (00:00:06) zoom in -949.85 -458.24
+\i (00:00:06) trapsize 1206
+\i (00:00:07) zoom out 1 
+\i (00:00:07) setwindow pcb
+\i (00:00:07) zoom out -949.85 -458.24
+\i (00:00:07) trapsize 2412
+\i (00:00:07) zoom out 1 
+\i (00:00:07) setwindow pcb
+\i (00:00:07) zoom out -949.86 -458.24
+\i (00:00:07) trapsize 4824
+\i (00:00:08) zoom in 1 
+\i (00:00:08) setwindow pcb
+\i (00:00:08) zoom in -386.43 -438.95
+\i (00:00:08) trapsize 2412
+\i (00:00:11) trapsize 3247
+\i (00:00:12) trapsize 2412
+\i (00:00:13) pick grid -2705.84 1022.77
+\t (00:00:13) last pick:  -2700.00 1000.00
+\i (00:00:18) zoom out 1 
+\i (00:00:18) setwindow pcb
+\i (00:00:18) zoom out -1760.31 771.91
+\i (00:00:18) trapsize 4857
+\i (00:00:19) zoom in 1 
+\i (00:00:19) setwindow pcb
+\i (00:00:19) zoom in -1983.43 2064.29
+\i (00:00:19) trapsize 2429
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow pcb
+\i (00:00:27) zoom out -1050.85 840.29
+\i (00:00:27) trapsize 4857
+\i (00:00:28) zoom in 1 
+\i (00:00:28) setwindow pcb
+\i (00:00:28) zoom in -254.29 -247.71
+\i (00:00:28) trapsize 2429
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom out -926.00 267.15
+\i (00:00:29) trapsize 4857
+\i (00:00:40) reset dockwindows 
+\i (00:00:42) fillin yes 
+\i (00:00:42) trapsize 4675
+\i (00:00:42) trapsize 4857
+\i (00:00:42) trapsize 4250
+\i (00:00:42) trapsize 57895
+\i (00:00:42) trapsize 26190
+\i (00:00:42) generaledit 
+\i (00:00:48) color192 
+\i (00:00:48) generaledit 
+\i (00:00:51) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:00:56) QtSignal ColorVisibilityDialog CVDTabs currentChanged Display
+\i (00:00:57) QtSignal CVDColorTable CVDColorButton5:1 clicked
+\i (00:00:58) QtSignal CVDDisplayGroup CVDBackgroundButton clicked
+\i (00:01:00) QtSignal ColorVisibilityDialog CVDTabs currentChanged Layers
+\i (00:01:04) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 0
+\i (00:01:04) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Pin
+\i (00:01:05) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:05) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 1
+\i (00:01:05) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Via
+\i (00:01:05) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:06) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox 1 2
+\i (00:01:06) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Etch
+\i (00:01:06) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:08) QtSignal CVDColorTable CVDColorButton0:1 clicked
+\i (00:01:09) QtSignal CVDLayerTable CVDLayerTableDelegate clickedColor 1 0
+\i (00:01:09) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Pin
+\i (00:01:09) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:10) QtSignal CVDLayerTable CVDLayerTableDelegate clickedColor 1 1
+\i (00:01:10) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Via
+\i (00:01:10) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:11) QtSignal CVDLayerTable CVDLayerTableDelegate clickedColor 1 2
+\i (00:01:11) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Bottom Etch
+\i (00:01:11) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:14) QtSignal CVDLayerTable VertHeader clickedCheckBox 7
+\i (00:01:14) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Filmmaskbottom Pin
+\i (00:01:16) QtSignal CVDColorTable CVDColorButton5:1 clicked
+\i (00:01:17) QtSignal CVDLayerTable VertHeader clickedButton 7
+\i (00:01:17) QtSignal CVDLayerSplitter CVDLayerTable dataChanged Filmmaskbottom Pin
+\i (00:01:19) zoom in 1 
+\i (00:01:19) setwindow pcb
+\i (00:01:19) zoom in -1335.00 102.00
+\i (00:01:19) trapsize 2125
+\i (00:01:19) zoom in 1 
+\i (00:01:19) setwindow pcb
+\i (00:01:19) zoom in -1305.25 110.50
+\i (00:01:19) trapsize 1062
+\i (00:01:20) zoom in 1 
+\i (00:01:20) setwindow pcb
+\i (00:01:20) zoom in -625.25 -82.88
+\i (00:01:20) trapsize 531
+\i (00:01:20) zoom in 1 
+\i (00:01:20) setwindow pcb
+\i (00:01:20) zoom in -625.25 -86.06
+\i (00:01:20) trapsize 266
+\i (00:01:21) zoom out 1 
+\i (00:01:21) setwindow pcb
+\i (00:01:21) zoom out -719.81 -163.09
+\i (00:01:21) trapsize 531
+\i (00:01:30) setwindow form.mini
+\i (00:01:30) FORM mini class PIN 
+\i (00:01:32) FORM mini subclass FILMMASKBOTTOM 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out 1 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out -785.69 98.29
+\i (00:01:33) trapsize 1062
+\i (00:01:33) zoom out 1 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out -785.69 98.29
+\i (00:01:33) trapsize 2125
+\i (00:01:34) zoom out 1 
+\i (00:01:34) setwindow pcb
+\i (00:01:34) zoom out 395.79 55.78
+\i (00:01:34) trapsize 4250
+\i (00:01:35) zoom in 1 
+\i (00:01:35) setwindow pcb
+\i (00:01:35) zoom in 330.96 543.96
+\i (00:01:35) trapsize 2125
+\i (00:01:47) zoom out 1 
+\i (00:01:47) setwindow pcb
+\i (00:01:47) zoom out -412.79 743.71
+\i (00:01:47) trapsize 4250
+\i (00:01:51) plot setup 
+\i (00:01:53) setwindow form.fpfileplotsetup
+\i (00:01:53) FORM fpfileplotsetup fpplotblackwhite YES 
+\i (00:01:57) FORM fpfileplotsetup done  
+\i (00:01:57) setwindow pcb
+\i (00:01:57) generaledit 
+\i (00:02:00) plot 
+\i (00:02:16) plotwint initialize "PDFCreator"
+\i (00:02:16) plotwint orientation 1
+\i (00:02:16) plotwint papername "A4"
+\i (00:02:16) plotwint scale 100
+\i (00:02:16) plotwint copies 1
+\i (00:02:16) plotwint defaultsource 15
+\i (00:02:16) plotwint printquality 4000
+\i (00:02:16) plotwint color 2
+\i (00:02:16) plotwint execute
+\i (00:10:39) pick grid -4123.01 2643.45
+\t (00:10:39) last pick:  -4100.00 2650.00
+\i (00:10:41) save 
+\i (00:10:45) fillin yes 
+\e (00:10:45) File "PerfecTea_rev_1_ArtWork.brd" is being edited by user "2069163o" on date "Wed Mar 28 15:59:21 2018" on system "RANK329-15".  Save design to another name or contact user to remove their lock.
+\i (00:10:46) fillin confirm
+\i (00:10:46) generaledit 
+\i (00:10:53) pick grid 611.45 -1606.52
+\t (00:10:53) last pick:  600.00 -1600.00
+\i (00:10:54) save 
+\i (00:10:55) fillin yes 
+\i (00:10:55) generaledit 
+\i (00:10:57) exit 
+\t (00:10:57)     Journal end - Wed Mar 28 16:24:46 2018

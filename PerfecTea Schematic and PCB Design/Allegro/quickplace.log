@@ -1,0 +1,29 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    QUICKPLACE LOG                                                   )
+(                                                                     )
+(    Drawing          : PerfecTea_rev_1.brd                           )
+(    Software Version : 17.2S013                                      )
+(    Date/Time        : Wed Mar 28 14:51:08 2018                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+State: Placing on layer TOP
+
+WARNING: Could not place:  J1 / HEADER 20X2_GU-RASP-PI-3_RASBER / GU-RASP-PI-3; outside of drawing extents
+         Placed symbol:  J2 / HEADER 13X2_GU-HEADER26_3.5 WAV / GU-HEADER26 at (-1183.73 3277.69)
+         Placed symbol:  U1 / L293D_0_GU-DIP16_L293D / GU-DIP16 at (-926.46 2758.00)
+         Placed symbol:  U2 / DS1307_0_GU-DIP8_DS1307 / GU-DIP8 at (-427.46 2358.00)
+         Placed symbol:  J5 / HEADER 3_GU-MOLEX3_TEMP PROBE / GU-MOLEX3 at (80.54 2283.00)
+         Placed symbol:  J4 / HEADER 2_GU-MOLEX2_MOTOR OUT A / GU-MOLEX2 at (313.54 2183.00)
+         Placed symbol:  R3 / RESISTOR_GU-RC400_1W INTERFACE / GU-RC400 at (487.54 2068.00)
+WARNING: Could not place:  BT1 / BATTERY_GU-CR2032-CLIP_3V COIN / GU-CR2032-CLIP; outside of drawing extents
+         Placed symbol:  J6 / HEADER 2_GU-MOLEX2_BUZZER/LOUDS / GU-MOLEX2 at (-1117.00 3530.38)
+         Placed symbol:  Y1 / CRYSTAL_GU-RC100_CRYSTAL / GU-RC100 at (-959.00 3425.38)
+
+
+Placed 8 of 10 applicable (10 total) symbols.
+
+-----------------------------------------------------------------------
+

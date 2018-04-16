@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.2.0 d001Mar-26-2018 at 16:53:04}
+{ Using PSTWRITER 17.2.0 d001Apr-16-2018 at 09:28:35}
 primitive 'BATTERY_GU-CR2032-CLIP_3V COIN';
   pin
     '+':
@@ -144,7 +144,7 @@ primitive 'HEADER 20X2_GU-RASP-PI-3_RASBER';
     VALUE='Rasberry Pi Header';
   end_body;
 end_primitive;
-primitive 'HEADER 13X2_GU-DIP26_3.5 WAVESH';
+primitive 'HEADER 13X2_GU-HEADER26_3.5 WAV';
   pin
     '2':
       PIN_NUMBER='(2)';
@@ -227,7 +227,7 @@ primitive 'HEADER 13X2_GU-DIP26_3.5 WAVESH';
   end_pin;
   body
     PART_NAME='HEADER 13X2';
-    JEDEC_TYPE='GU-DIP26';
+    JEDEC_TYPE='gu-header26';
     VALUE='3.5 WAVESHARE Touchscreen';
   end_body;
 end_primitive;

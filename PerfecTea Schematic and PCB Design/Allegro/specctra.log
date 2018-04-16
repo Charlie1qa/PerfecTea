@@ -1,0 +1,308 @@
+# 
+# ===============================================================================
+#                               Allegro PCB Router                               
+# Copyright 1990-2010 Cadence Design Systems, Inc.  All Rights Reserved.
+# ===============================================================================
+# 
+# Software licensed for sale by Cadence Design Systems, Inc.
+# Current time = Wed Mar 28 15:44:02 2018
+# 
+# Allegro PCB Router v17-2-50 made 2017/01/16 at 14:16:53
+# Running on: rank329-15, OS Version: WindowsNT 6.2.9200, Architecture: Intel Pentium II, III, or 4
+# Licensing: The program will not obey any unlicensed rules
+# No graphics will be displayed.
+# Design Name H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Batch File Name: pasde.do
+# Did File Name: H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro/specctra.did
+# Current time = Wed Mar 28 15:44:02 2018
+# PCB H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro
+# Master Unit set up as: MIL 1000
+# PCB Limits xlo=-1375.0000 ylo=-2200.0000 xhi=1375.0000 yhi=2200.0000
+# Total 1 Images Consolidated.
+# Via 'GU-VIA80' z=1, 2 xlo=-40.0000 ylo=-40.0000 xhi= 40.0000 yhi= 40.0000
+# 
+#    VIA       TOP      BOTTOM  
+# 
+#    TOP  ----------  'GU-VIA80'
+# BOTTOM  'GU-VIA80'  ----------
+# 
+# Wires Processed 39, Vias Processed 2
+# Using colormap in design file.
+# Layers Processed: Signal Layers 2
+# Components Placed 10, Images Processed 18, Padstacks Processed 12
+# Nets Processed 30, Net Terminals 78
+# PCB Area=10000000.000  EIC=7  Area/EIC=1428571.429  SMDs=0
+# Total Pin Count: 107
+# Signal Connections Created 23
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# 
+# Wiring Statistics ----------------- H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Nets 30 Connections 46 Unroutes 23
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 8, at vias 0 Total Vias 2
+# Percent Connected   47.83
+# Manhattan Length 122319.2800 Horizontal 38349.5120 Vertical 83969.7680
+# Routed Length 42104.6912 Horizontal 19029.5400 Vertical 24858.9500
+# Ratio Actual / Manhattan   0.3442
+# Unconnected Length 87767.6200 Horizontal 26629.5300 Vertical 61138.0900
+# Total Conflicts: 1 (Cross: 0, Clear: 1, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:01
+# Loading Do File pasde.do ...
+# Loading Do File H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1_rules.do ...
+# Colormap Written to File _notify.std
+# Enter command <# Loading Do File C:/Users/2069163o/AppData/Local/Temp/#Taaaaaf08896.tmp ...
+# All Components Unselected.
+# All Nets Unselected.
+set route_diagonal 4
+grid wire 0.010000 (direction x) (offset 0.000000)
+grid wire 0.010000 (direction y) (offset 0.000000)
+grid via 0.010000 (direction x) (offset 0.000000)
+grid via 0.010000 (direction y) (offset 0.000000)
+protect all wires
+# All Wires Protected.
+direction TOP horizontal
+select layer TOP
+unprotect layer_wires TOP
+# Wires on layer TOP were Unprotected.
+direction BOTTOM vertical
+select layer BOTTOM
+unprotect layer_wires BOTTOM
+# Wires on layer BOTTOM were Unprotected.
+cost via 100
+set turbo_stagger off
+limit outside -1
+rule pcb (patterns_allowed  trombone accordion)
+set pattern_stacking on
+rule pcb (sawtooth_amplitude -1 -1)
+rule pcb (sawtooth_gap -1)
+rule pcb (accordion_amplitude -1 -1)
+rule pcb (accordion_gap -1)
+rule pcb (trombone_run_length -1)
+rule pcb (trombone_gap -1)
+route 25 1
+# Command route detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command route will ignore pcb layer rule(s), mcm via rule(s)
+# Current time = Wed Mar 28 15:44:08 2018
+# 
+#    VIA       TOP      BOTTOM  
+# 
+#    TOP  ----------  'GU-VIA80'
+# BOTTOM  'GU-VIA80'  ----------
+# 
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# 
+# Wiring Statistics ----------------- H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Nets 30 Connections 46 Unroutes 23
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 8, at vias 0 Total Vias 2
+# Percent Connected   47.83
+# Manhattan Length 122319.2800 Horizontal 38349.5120 Vertical 83969.7680
+# Routed Length 42104.6912 Horizontal 19029.5400 Vertical 24858.9500
+# Ratio Actual / Manhattan   0.3442
+# Unconnected Length 87767.6200 Horizontal 26629.5300 Vertical 61138.0900
+# Start Route Pass 1 of 25
+# Routing 45 wires.
+# Total Conflicts: 7 (Cross: 5, Clear: 2, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 42 Successes 39 Failures 3 Vias 3
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 1 of 25
+# 0 bend points have been removed.
+# 0 bend points have been removed.
+# 0 bend points have been removed.
+# Start Route Pass 2 of 25
+# Routing 11 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# Total Conflicts: 4 (Cross: 2, Clear: 2, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 11 Successes 11 Failures 0 Vias 1
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 2 of 25
+# Start Route Pass 3 of 25
+# Routing 8 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# Total Conflicts: 1 (Cross: 1, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 8 Successes 7 Failures 1 Vias 1
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 3 of 25
+# Start Route Pass 4 of 25
+# Routing 6 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 5 Successes 5 Failures 0 Vias 1
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 4 of 25
+# Start Route Pass 5 of 25
+# Routing 0 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 0 Successes 0 Failures 0 Vias 1
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 5 of 25
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# ROUTING HISTORY ================================================================
+#     Pass     |   Conflicts |    |     |     |     |    |Red|      CPU Time     |
+#   Name   |No.| Cross| Clear|Fail|Unrte| Vias|XTalk|Len.| % |  Pass   |  Total  |
+#----------+---+------+------+----+-----+-----+-----+----+---+---------+---------|
+# Route    |  1|     5|     2|   3|   17|    3|    0|   0|  0|  0:00:00|  0:00:00|
+# Route    |  2|     2|     2|   0|   17|    1|    0|   0| 42|  0:00:00|  0:00:00|
+# Route    |  3|     1|     0|   1|   17|    1|    0|   0| 75|  0:00:00|  0:00:00|
+# Route    |  4|     0|     0|   0|   17|    1|    0|   0|100|  0:00:00|  0:00:00|
+# Route    |  5|     0|     0|   0|   17|    1|    0|   0|  0|  0:00:00|  0:00:00|
+# Conflicts between polygon wires and fixed objects:   0
+# Stub Violations:   0
+# Net Order Violations:   0
+# Diffpair Uncoupled Length Violations:   0
+# Diffpair Phase Tolerance  Violations:   0
+# Total layerset violations:   0
+# Total layerset violations (exclude Fanout/Stagger/XNet Short side):   0
+# Overall Routing Time: 0:00:00
+# 
+# Wiring Statistics ----------------- H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Nets 30 Connections 46 Unroutes 17
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 8, at vias 0 Total Vias 1
+# Percent Connected   63.04
+# Manhattan Length 123757.9700 Horizontal 37619.8680 Vertical 86138.1020
+# Routed Length 49893.3390 Horizontal 19295.9300 Vertical 33754.2900
+# Ratio Actual / Manhattan   0.4032
+# Unconnected Length 79048.6600 Horizontal 24249.4400 Vertical 54799.2200
+clean 2
+# Command clean detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command clean will ignore pcb layer rule(s), mcm via rule(s)
+# Current time = Wed Mar 28 15:44:09 2018
+# 
+#    VIA       TOP      BOTTOM  
+# 
+#    TOP  ----------  'GU-VIA80'
+# BOTTOM  'GU-VIA80'  ----------
+# 
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# 
+# Wiring Statistics ----------------- H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Nets 30 Connections 46 Unroutes 17
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 8, at vias 0 Total Vias 1
+# Percent Connected   63.04
+# Manhattan Length 123757.9700 Horizontal 37619.8680 Vertical 86138.1020
+# Routed Length 49893.3390 Horizontal 19295.9300 Vertical 33754.2900
+# Ratio Actual / Manhattan   0.4032
+# Unconnected Length 79048.6600 Horizontal 24249.4400 Vertical 54799.2200
+# Start Clean Pass 1 of 2
+# Routing 41 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 37 Successes 35 Failures 2 Vias 1
+# Cpu Time = 0:00:01  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 1 of 2
+# Start Clean Pass 2 of 2
+# Routing 42 wires.
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# 0 bend points have been removed.
+# 0 bend points have been removed.
+# 0 bend points have been removed.
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Total Unroutes: 17
+# Attempts 37 Successes 34 Failures 3 Vias 1
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# End Pass 2 of 2
+# Cpu Time = 0:00:01  Elapsed Time = 0:00:00
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width=25.0000, Clearance=25.0000
+# Command check detected pcb layer rule(s), mcm via rule(s), which require the RouteADV license feature.
+# All unlicensed rules are being ignored.
+# Command check will ignore pcb layer rule(s), mcm via rule(s)
+# ROUTING HISTORY ================================================================
+#     Pass     |   Conflicts |    |     |     |     |    |Red|      CPU Time     |
+#   Name   |No.| Cross| Clear|Fail|Unrte| Vias|XTalk|Len.| % |  Pass   |  Total  |
+#----------+---+------+------+----+-----+-----+-----+----+---+---------+---------|
+# Route    |  1|     5|     2|   3|   17|    3|    0|   0|  0|  0:00:00|  0:00:00|
+# Route    |  2|     2|     2|   0|   17|    1|    0|   0| 42|  0:00:00|  0:00:00|
+# Route    |  3|     1|     0|   1|   17|    1|    0|   0| 75|  0:00:00|  0:00:00|
+# Route    |  4|     0|     0|   0|   17|    1|    0|   0|100|  0:00:00|  0:00:00|
+# Route    |  5|     0|     0|   0|   17|    1|    0|   0|  0|  0:00:00|  0:00:00|
+# Clean    |  6|     0|     0|   2|   17|    1|    0|   0|   |  0:00:01|  0:00:01|
+# Clean    |  7|     0|     0|   3|   17|    1|    0|   0|   |  0:00:00|  0:00:01|
+# Conflicts between polygon wires and fixed objects:   0
+# Stub Violations:   0
+# Net Order Violations:   0
+# Diffpair Uncoupled Length Violations:   0
+# Diffpair Phase Tolerance  Violations:   0
+# Total layerset violations:   0
+# Total layerset violations (exclude Fanout/Stagger/XNet Short side):   0
+# Overall Routing Time: 0:00:01
+# 
+# Wiring Statistics ----------------- H:/PERFECTEA SCHEMATIC AND PCB DESIGN/allegro\PerfecTea_rev_1.dsn
+# Nets 30 Connections 46 Unroutes 17
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 8, at vias 0 Total Vias 1
+# Percent Connected   63.04
+# Manhattan Length 122897.3700 Horizontal 37359.2240 Vertical 85538.1460
+# Routed Length 50077.7093 Horizontal 18808.4000 Vertical 32843.7000
+# Ratio Actual / Manhattan   0.4075
+# Unconnected Length 79048.6600 Horizontal 24249.4400 Vertical 54799.2200
+write routes (changed_only) (reset_changed) C:/Users/2069163o/AppData/Local/Temp/#Taaaaag08896.tmp
+# Routing Written to File C:/Users/2069163o/AppData/Local/Temp/#Taaaaag08896.tmp

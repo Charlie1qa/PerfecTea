@@ -2,8 +2,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
@@ -58,8 +58,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   2  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
@@ -114,8 +114,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   3  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
@@ -129,8 +129,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   4  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | COMPONENT DEFINITION added to design                                         |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
@@ -142,7 +142,7 @@
  HEADER 2_GU-MOLEX2_BUZZER/LOUDS
  HEADER 2_GU-MOLEX2_MOTOR OUT A
  HEADER 3_GU-MOLEX3_TEMP PROBE
- HEADER 13X2_GU-DIP26_3.5 WAVESH
+ HEADER 13X2_GU-HEADER26_3.5 WAV
  HEADER 20X2_GU-RASP-PI-3_RASBER
  L293D_0_GU-DIP16_L293D
  RESISTOR_GU-RC400_1W INTERFACE
@@ -150,8 +150,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   5  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | COMPONENTS ADDED to design                                                   |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
@@ -159,7 +159,7 @@
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
  BT1                 BATTERY_GU-CR2032-CLIP_3V COIN 
  J1                  HEADER 20X2_GU-RASP-PI-3_RASBER 
- J2                  HEADER 13X2_GU-DIP26_3.5 WAVESH 
+ J2                  HEADER 13X2_GU-HEADER26_3.5 WAV 
  J4                  HEADER 2_GU-MOLEX2_MOTOR OUT A 
  J5                  HEADER 3_GU-MOLEX3_TEMP PROBE 
  J6                  HEADER 2_GU-MOLEX2_BUZZER/LOUDS 
@@ -171,8 +171,8 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   6  |
 |------------------------------------------------------------------------------|
-|  H:/PerfecTea Schematic and PCB Design/Allegro/rev1.brd                      |
-|                                                    Mon Mar 26 16:49:59 2018  |
+|  H:/PerfecTea Schematic and PCB Design/Allegro/largerbrd.brd                 |
+|                                                    Wed Mar 28 14:50:58 2018  |
 |------------------------------------------------------------------------------|
 | SLOT PROPERTIES added to design                                              |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
