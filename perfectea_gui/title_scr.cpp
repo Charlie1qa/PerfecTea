@@ -73,7 +73,7 @@ void title_scr::operateMotor()
 {
     QProcess process, process2;
     // code to operate motor
-    process.start("./Motor");
+    //process.start("./Motor");
     //process.waitForFinished();
     //QString dirstring = QString::number(direction);
     if (direction == 0) process2.start("echo 0");
@@ -81,7 +81,7 @@ void title_scr::operateMotor()
     else process2.start("echo 2");
     process2.waitForFinished();
 
-    process.close();
+    //process.close();
     process2.close();
 }
 
@@ -178,6 +178,7 @@ void title_scr::on_pushButton_7_clicked()
 //short button
 void title_scr::on_pushButton_clicked()
 {    
+    QProcess process, echo;
     cuplength = 1;
     ui->label_9->setText("Please select the size of your cup");
     ui->pushButton -> setEnabled(false);
@@ -185,6 +186,14 @@ void title_scr::on_pushButton_clicked()
     ui->pushButton_3 -> setEnabled(false);
     ui->pushButton_4 -> setEnabled(true);
     ui->pushButton_5 -> setEnabled(true);
+
+    process.start("sh", QStringList() << "-c" << "./Motor");
+    process.waitForFinished();
+    echo.start("sh", QStringList() << "-c" << "echo 2");
+    echo.waitForFinished();
+
+    process.close();
+    echo.close();
 }
 
 /* debug back button
