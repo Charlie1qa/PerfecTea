@@ -282,7 +282,7 @@ void title_scr::on_pushButton_4_clicked()
 
             process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
-            QThread::sleep(2);
+            QThread::sleep(1);
             process2.close();
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
@@ -322,11 +322,12 @@ void title_scr::on_pushButton_5_clicked()
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
             QThread::sleep(2);
-
-            process.close();
+            process.terminate();
+            //process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
             QThread::sleep(2);
-            process2.close();
+            process2.terminate();
+            //process2.close();
 
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
