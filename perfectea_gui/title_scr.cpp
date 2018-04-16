@@ -87,6 +87,7 @@ void title_scr::operateMotor()
 
 void title_scr::updateBar()
 {    
+    QProcess process, process2;
     //short brewtime
     if (cuplength == 1){
         ui->progressBar->setValue(10-counter);
@@ -117,6 +118,15 @@ void title_scr::updateBar()
         ui->progressBar->setRange(0,100);
         ui->progressBar->setValue(0);
         ui->label_9->setText("Please select the brew strength");
+
+        //raise the infuser
+        process.start("sh", QStringList() << "-c" << "./up");
+        QThread::sleep(2);
+
+        process.close();
+        process2.start("sh", QStringList() << "-c" << "./zero");
+        QThread::sleep(2);
+        process2.close();
 
         //open TeaReady dialog window
         readyDialog window;
@@ -178,7 +188,7 @@ void title_scr::on_pushButton_7_clicked()
 //short button
 void title_scr::on_pushButton_clicked()
 {    
-    QProcess process, process2;
+    //QProcess process, process2;
     cuplength = 1;
     ui->label_9->setText("Please select the size of your cup");
     ui->pushButton -> setEnabled(false);
@@ -186,7 +196,7 @@ void title_scr::on_pushButton_clicked()
     ui->pushButton_3 -> setEnabled(false);
     ui->pushButton_4 -> setEnabled(true);
     ui->pushButton_5 -> setEnabled(true);
-
+/*
     process.start("sh", QStringList() << "-c" << "./down");
     QThread::sleep(2);
 
@@ -194,7 +204,7 @@ void title_scr::on_pushButton_clicked()
     process2.start("sh", QStringList() << "-c" << "./zero");
     QThread::sleep(2);
     process2.close();
-
+*/
 }
 
 /* debug back button
@@ -244,6 +254,7 @@ void title_scr::on_pushButton_3_clicked()
 //large button
 void title_scr::on_pushButton_4_clicked()
 {
+    QProcess process, process2;
     cupsize = 2;
     ui->label_9->setText("Please select the brewtime");
     ui->pushButton_4 -> setEnabled(false);
@@ -266,11 +277,13 @@ void title_scr::on_pushButton_4_clicked()
             }
 
             //lower the infuser here
-           /* direction = 1;
-            operateMotor();
+            process.start("sh", QStringList() << "-c" << "./down");
             QThread::sleep(2);
-            direction = 0;
-            operateMotor();*/
+
+            process.close();
+            process2.start("sh", QStringList() << "-c" << "./zero");
+            QThread::sleep(2);
+            process2.close();
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
             else if (cuplength == 2) counter = 360;
@@ -284,6 +297,7 @@ void title_scr::on_pushButton_4_clicked()
 //small button
 void title_scr::on_pushButton_5_clicked()
 {
+    QProcess process, process2;
     cupsize = 1;
     ui->label_9->setText("Please select the brewtime");
     ui->pushButton_4 -> setEnabled(false);
@@ -306,11 +320,13 @@ void title_scr::on_pushButton_5_clicked()
             }
 
             //lower the infuser here
-           /* direction = 1;
-            operateMotor();
+            process.start("sh", QStringList() << "-c" << "./down");
             QThread::sleep(2);
-            direction = 0;
-            operateMotor();*/
+
+            process.close();
+            process2.start("sh", QStringList() << "-c" << "./zero");
+            QThread::sleep(2);
+            process2.close();
 
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
