@@ -8,6 +8,7 @@
 #include <QDateTime>
 #include <QThread>
 #include <QProcess>
+#include <unistd.h>
 
 int cupsize = 0;
 int cuplength = 0;
@@ -121,11 +122,11 @@ void title_scr::updateBar()
 
         //raise the infuser
         process.start("sh", QStringList() << "-c" << "./up");
-        QThread::sleep(2);
+        sleep(2);
 
         process.close();
         process2.start("sh", QStringList() << "-c" << "./zero");
-        QThread::sleep(2);
+        sleep(2);
         process2.close();
 
         //open TeaReady dialog window
@@ -278,11 +279,11 @@ void title_scr::on_pushButton_4_clicked()
 
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
-            QThread::sleep(2);
+            sleep(2);
 
             process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
-            QThread::sleep(1);
+            sleep(1);
             process2.close();
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
@@ -321,11 +322,11 @@ void title_scr::on_pushButton_5_clicked()
 
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
-            QThread::sleep(2);
+            sleep(2);
             process.terminate();
             //process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
-            QThread::sleep(2);
+            sleep(2);
             process2.terminate();
             //process2.close();
 
