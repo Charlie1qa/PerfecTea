@@ -187,11 +187,8 @@ void title_scr::on_pushButton_clicked()
     ui->pushButton_4 -> setEnabled(true);
     ui->pushButton_5 -> setEnabled(true);
 
-    process.start("sh", QStringList() << "-c" << "./Motor");
-    process.waitForFinished();
-    echo.start("sh", QStringList() << "-c" << "echo 2");
-    echo.waitForFinished();
-
+    process.start("sh", QStringList() << "-c" << "./down");
+    QThread::sleep(2);
     process.close();
     echo.close();
 }
@@ -265,11 +262,11 @@ void title_scr::on_pushButton_4_clicked()
             }
 
             //lower the infuser here
-            direction = 1;
+           /* direction = 1;
             operateMotor();
             QThread::sleep(2);
             direction = 0;
-            operateMotor();
+            operateMotor();*/
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
             else if (cuplength == 2) counter = 360;
@@ -305,11 +302,11 @@ void title_scr::on_pushButton_5_clicked()
             }
 
             //lower the infuser here
-            direction = 1;
+           /* direction = 1;
             operateMotor();
             QThread::sleep(2);
             direction = 0;
-            operateMotor();
+            operateMotor();*/
 
             ui->stackedWidget->setCurrentIndex(2);
             if (cuplength == 1) counter = 10;                              //360 seconds brewing time countdown
