@@ -115,7 +115,7 @@ void title_scr::updateBar()
 
         //raise the infuser
         process.start("sh", QStringList() << "-c" << "./up");
-        if (cupsize==2) QThread::msleep(1500);
+        if (cupsize==2) QThread::msleep(1600);
         else QThread::msleep(2000);
         process.waitForFinished();
         process.close();

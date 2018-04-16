@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_0">
      <widget class="QLabel" name="date1">
@@ -333,7 +333,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>13</pointsize>
        </font>
       </property>
       <property name="text">
@@ -380,15 +380,15 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>150</y>
-        <width>331</width>
+        <x>60</x>
+        <y>140</y>
+        <width>381</width>
         <height>81</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>15</pointsize>
        </font>
       </property>
       <property name="text">
@@ -409,6 +409,11 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Set Date &amp;&amp; Time</string>
       </property>
@@ -421,6 +426,11 @@
         <width>191</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Info and Credits</string>
@@ -435,6 +445,11 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Shutdown</string>
       </property>
@@ -447,6 +462,11 @@
         <width>101</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Back</string>

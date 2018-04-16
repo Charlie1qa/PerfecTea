@@ -20,14 +20,14 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>10</y>
+     <y>20</y>
      <width>361</width>
      <height>161</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>14</pointsize>
     </font>
    </property>
    <property name="text">
@@ -45,6 +45,11 @@
      <width>101</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Done</string>
