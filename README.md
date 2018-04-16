@@ -2,7 +2,7 @@
 
 ### The Quest To Create the Perfect Cup of Tea!!
 
-In 2018 we have tried to solved several of the worlds biggest problems, we have cars in space, we can order pizza online and have it delivered to our doors but we have one last limitation to overcome.....a good....no wait...Perfect cup of tea! Follow the adventure at @Perfec_Tea on twitter.
+In 2018 we have tried to solved several of the worlds biggest problems, we have cars in space, we can order pizza online and have it delivered to our doors but we have one last limitation to overcome.....a good....no wait...Perfect cup of tea! Follow the adventure at https://twitter.com/Perfec_Tea .
 
 ## How?
 
@@ -40,4 +40,4 @@ Menu:
 ![alt text](https://i.imgur.com/UWVkcXK.jpg)
 
 
-Follow us on twitter at https://twitter.com/Perfec_Tea
+
