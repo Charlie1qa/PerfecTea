@@ -178,7 +178,7 @@ void title_scr::on_pushButton_7_clicked()
 //short button
 void title_scr::on_pushButton_clicked()
 {    
-    QProcess process, echo;
+    QProcess process, process2;
     cuplength = 1;
     ui->label_9->setText("Please select the size of your cup");
     ui->pushButton -> setEnabled(false);
@@ -189,8 +189,12 @@ void title_scr::on_pushButton_clicked()
 
     process.start("sh", QStringList() << "-c" << "./down");
     QThread::sleep(2);
+
     process.close();
-    echo.close();
+    process2.start("sh", QStringList() << "-c" << "./zero");
+    QThread::sleep(2);
+    process2.close();
+
 }
 
 /* debug back button
