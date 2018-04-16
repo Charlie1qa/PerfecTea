@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_0">
      <widget class="QLabel" name="date1">
@@ -393,19 +393,6 @@
       </property>
       <property name="text">
        <string>Please be patient while your tea is ready...</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_12">
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>260</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>DebugBack</string>
       </property>
      </widget>
     </widget>

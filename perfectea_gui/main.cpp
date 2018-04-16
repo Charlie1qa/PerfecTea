@@ -7,8 +7,8 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     title_scr title;
 
-    title.show();
-    //title.showFullScreen();
+    //title.show();
+    title.showFullScreen();
 
     return app.exec();
 }

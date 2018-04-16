@@ -38,7 +38,7 @@ title_scr::title_scr(QWidget *parent) :
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(on_pushButton_3_clicked()));
     connect(ui->pushButton_4, SIGNAL(clicked()), this, SLOT(on_pushButton_4_clicked()));
     connect(ui->pushButton_5, SIGNAL(clicked()), this, SLOT(on_pushButton_5_clicked()));*/
-    connect(ui->pushButton_12, SIGNAL(clicked()), this, SLOT(on_pushButton_12_clicked()));
+    //connect(ui->pushButton_12, SIGNAL(clicked()), this, SLOT(on_pushButton_12_clicked()));
     if ((cupsize || cuplength) == 0){
         ui->pushButton_4 -> setEnabled(false);
         ui->pushButton_5 -> setEnabled(false);
@@ -122,12 +122,12 @@ void title_scr::updateBar()
 
         //raise the infuser
         process.start("sh", QStringList() << "-c" << "./up");
-        sleep(2);
+        QThread::sleep(2);
 
         process.waitForFinished();
         process.close();
         process2.start("sh", QStringList() << "-c" << "./zero");
-        sleep(1);
+        QThread::sleep(1);
         process.waitForFinished();
         process2.close();
 
@@ -147,7 +147,7 @@ title_scr::~title_scr()
     delete ui;
 }
 
-void title_scr::mousePressEvent(QMouseEvent *event)
+cd..void title_scr::mousePressEvent(QMouseEvent *event)
 {
     if (ui->stackedWidget->currentIndex()==0){      //if mouse is pressed while on title screen, go to screen one
         ui->stackedWidget->setCurrentIndex(1);
@@ -281,11 +281,11 @@ void title_scr::on_pushButton_4_clicked()
 
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
-            sleep(2);
+            QThread::msleep(2500);
             process.waitForFinished();
             process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
-            sleep(1);
+            QThread::msleep(200);
             process2.waitForFinished();
             process2.close();
             ui->stackedWidget->setCurrentIndex(2);
@@ -325,11 +325,11 @@ void title_scr::on_pushButton_5_clicked()
 
             //lower the infuser here
             process.start("sh", QStringList() << "-c" << "./down");
-            sleep(2);
+            QThread::msleep(2000);
             process.waitForFinished();
             process.close();
             process2.start("sh", QStringList() << "-c" << "./zero");
-            sleep(1);
+            QThread::msleep(200);
             process2.waitForFinished();
             process2.close();
 
